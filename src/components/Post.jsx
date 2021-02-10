@@ -9,7 +9,7 @@ export const Post = ({userId, title, body}) => {
     const handleDetails = (userId) => {
         dispatch(fetchComments(userId))
     }
-    
+
 
 
     return (

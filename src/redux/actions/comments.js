@@ -6,13 +6,17 @@ export const setLoaded = (payload) => ({
 });
 
 export const fetchComments = (id) => (dispatch) => {
+    dispatch({
+        type: 'SET_LOADED',
+        payload: false,
+      });
 
     axios.get(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
         .then(({
             data
         }) => {
-            console.log(data)
             dispatch(setComments(data))
+            console.log(data)
         })
 }
 

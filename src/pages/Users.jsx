@@ -27,11 +27,9 @@ export const Users = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {isLoaded ? items.map((obj) => <User key={obj.id} {...obj} />) : (
-                        <Spinner animation="border" role="status">
-  <span className="sr-only">Loading...</span>
-</Spinner>
-                    )}
+                    {
+                        items.map((obj) => <User key={obj.id} {...obj} />)
+                    }
                 </tbody>
                 
             </Table>

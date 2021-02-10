@@ -6,12 +6,17 @@ export const setLoaded = (payload) => ({
 });
 
 export const fetchPosts = (id) => (dispatch) => {
+    dispatch({
+        type: 'SET_LOADED',
+        payload: false,
+      });
+
+
     axios.get(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
         .then(({
             data
         }) => {
             dispatch(setPosts(data))
-            console.log(data)
 
         })
 }

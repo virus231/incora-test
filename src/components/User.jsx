@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../redux/actions/posts";
@@ -9,6 +10,12 @@ export const User = ({ id, name, email }) => {
     const PostUser = (id) => {
         dispatch(fetchPosts(id))
     }
+
+    useEffect(() => {
+        PostUser(id)
+    },[])
+
+
 
     return (
         <tr>

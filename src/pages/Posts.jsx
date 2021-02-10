@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../redux/actions/posts";
 import Table from 'react-bootstrap/Table'
@@ -12,7 +12,6 @@ export const Posts = () => {
 
     useEffect(() => {
         dispatch(fetchPosts());
-
     }, []);
 
     return (
